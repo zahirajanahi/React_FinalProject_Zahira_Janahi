@@ -1,15 +1,13 @@
-import React, { useState } from 'react'; // Import useState hook
+import React, { useState } from 'react'; 
 import { Images, JsonData } from "../../constant";
 import Navbar from '../../layouts/navbar';
 import Footer from '../../layouts/footer';
 
 const Shop = () => {
-  const [currentPage, setCurrentPage] = useState(1); // Track the current page
+  const [currentPage, setCurrentPage] = useState(1);
 
-  // Pagination logic: If currentPage is 1, show first 6 items, else show 2 items
-  const selectedProducts = currentPage === 1
-    ? JsonData.Products.slice(3, 9) // Display first 6 products (4th to 9th)
-    : JsonData.Products.slice(9, 11); // Display only 2 products (10th to 11th)
+
+  const selectedProducts = currentPage === 1 ? JsonData.Products.slice(3, 9) : JsonData.Products.slice(9, 11);
 
   return (
     <>

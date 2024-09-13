@@ -24,4 +24,5 @@ export default {
     bgAbout:require('../assets/images/bgAbout.png'),
     bgContact:require('../assets/images/bgContact.png'),
     bgProduct:require('../assets/images/bgProduct.png'),
+    bgBlog:require('../assets/images/blog_bg.png'),
 }
