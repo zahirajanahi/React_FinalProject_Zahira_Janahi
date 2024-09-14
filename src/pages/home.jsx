@@ -12,10 +12,16 @@ function Home() {
   const navigate = useNavigate();
   const { Products } = JsonData || {}; 
   const sunglasses = Products && Products.length > 0 ? Products[Products.length - 1] : null;
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (product) => {
+    setCartItems((prevItems) => [...prevItems, product]);
+  };
+  
   
   return (
     <>
-      <Navbar />
+      <Navbar cartItems={cartItems}/>
       <Carousel />
 
         {/* section three */}
@@ -88,7 +94,7 @@ function Home() {
       </section>
 
       {/* section carousel 2*/}
-      <Carousel2 />
+      <Carousel2 addToCart={addToCart}/>
 
 
      {/* section random product*/}

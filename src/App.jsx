@@ -8,14 +8,16 @@ import Features from './pages/features/Features'
 import Shop from './pages/shop/Shop'
 import Contact from './pages/contact/Contact'
 import Blog from './pages/blog/Blog'
-
+import Navbar from "./layouts/navbar";
 
 
 
 
 function App() {
+  const cartItems = [];
   return (
     <>
+    <Navbar cartItems={cartItems} />
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/about" element={<About />} />
