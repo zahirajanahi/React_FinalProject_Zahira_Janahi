@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react'; 
 import Navbar from '../../layouts/navbar';
 import { Images, JsonData } from "../../constant";
 import Footer from '../../layouts/footer';
 
 const Blog = (props) => {
-    const blogPosts = JsonData.Products.slice(0, 3); 
-    const sidebarProducts = JsonData.Products.slice(3, 8); 
+    const [currentPage, setCurrentPage] = useState(1);
+
+    
+    const blogPosts = currentPage === 1 ? JsonData.Products.slice(0, 2) : JsonData.Products.slice(2, 3);
+    const sidebarProducts = JsonData.Products.slice(3, 10); 
+  
+    const handlePageChange = (page) => {
+      setCurrentPage(page);
+    };
+  
     return (
         <>
         <Navbar/>
@@ -36,6 +44,24 @@ const Blog = (props) => {
               </div>
             </div>
           ))}
+          <div className="flex justify-center mt-8 me-96">
+            <button
+              onClick={() => handlePageChange(1)}
+              className={`px-4 py-2 mx-2 rounded-full ${
+                currentPage === 1 ? 'bg-black text-white' : 'bg-white text-black border-[1px]'
+              }`}
+            >
+              1
+            </button>
+            <button
+              onClick={() => handlePageChange(2)}
+              className={`px-4 py-2 mx-2 rounded-full ${
+                currentPage === 2 ? 'bg-black text-white' : 'bg-white text-black border-[1px]'
+              }`}
+            >
+              2
+            </button>
+          </div>
         </div>
 
  
