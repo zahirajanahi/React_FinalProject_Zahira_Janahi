@@ -43,7 +43,9 @@ const Navbar = ({ cartItems = [] }) => {
       </ul>
 
       <div className="flex items-center space-x-4 pe-10">
-        <FiUser className="text-gray-500 hover:text-gray-700 w-6 h-6 cursor-pointer" />
+      <Link to="/auth">
+       <FiUser className="text-gray-500 hover:text-gray-700 w-6 h-6 cursor-pointer" />
+     </Link>
         <div className="h-6 border-r border-gray-400"></div>
         <div className="relative">
           <FiShoppingBag
@@ -76,13 +78,13 @@ const Navbar = ({ cartItems = [] }) => {
                 </div>
               ))}
 
-              {/* Subtotal */}
+             
               <div className="flex gap-3 items-center ms-32 mt-4  pt-4">
                 <p className="">Subtotal:</p>
                 <p className="">£{subtotal.toFixed(2)}</p>
               </div>
 
-              {/* Buttons */}
+           
               <div className="flex gap-4 mt-6">
                 <button className="bg-black text-white px-7 py-3 rounded-full hover:bg-red-500 duration-500">
                   View Cart

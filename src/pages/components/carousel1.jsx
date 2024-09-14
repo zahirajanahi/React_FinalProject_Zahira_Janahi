@@ -54,13 +54,13 @@ function Carousel() {
       </Slider>
       <button 
         onClick={handlePrev} 
-        className="absolute left-5 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-3 rounded-full hover:bg-opacity-75 hover:bg-gray-700"
+        className="absolute left-5 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-3 rounded-full hover:bg-opacity-75 hover:bg-red-400 duration-500"
       >
         <GrFormPrevious />
       </button>
       <button 
         onClick={handleNext} 
-        className="absolute right-5 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-3 rounded-full hover:bg-opacity-75 hover:bg-gray-700"
+        className="absolute right-5 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-3 rounded-full hover:bg-opacity-75 hover:bg-red-400 duration-500"
       >
         <MdOutlineNavigateNext />
       </button>

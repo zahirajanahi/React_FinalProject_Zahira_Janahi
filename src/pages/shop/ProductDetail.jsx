@@ -5,6 +5,7 @@ import CarouselTwo from '../components/carousel2';
 import Footer from '../../layouts/footer';
 
 const ProductDetail = () => {
+    
   const { id } = useParams();
   const product = JsonData.Products.find((item) => item.id === parseInt(id));
 
@@ -12,6 +13,11 @@ const ProductDetail = () => {
   const [descriptionOpen, setDescriptionOpen] = useState(false);
   const [additionalInfoOpen, setAdditionalInfoOpen] = useState(false);
   const [reviewsOpen, setReviewsOpen] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (product) => {
+    setCartItems((prevItems) => [...prevItems, product]);
+  };
 
   if (!product) {
     return <div>Product not found</div>;
@@ -129,7 +135,7 @@ const ProductDetail = () => {
         </div>
       </div>
 
-      <CarouselTwo />
+      <CarouselTwo addToCart={addToCart} />
       <Footer />
     </>
   );

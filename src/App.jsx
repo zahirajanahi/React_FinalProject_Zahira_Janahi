@@ -9,6 +9,9 @@ import Contact from './pages/contact/Contact'
 import Blog from './pages/blog/Blog'
 import Navbar from "./layouts/navbar";
 import ProductDetail from "./pages/shop/ProductDetail";
+import { MyProvider } from "./context";
+import { Auth } from "./auth/Auth";
+import { Register } from "./auth/Register";
 
 
 
@@ -16,6 +19,7 @@ function App() {
   const cartItems = [];
   return (
     <>
+    <MyProvider>
     <Navbar cartItems={cartItems} />
     <Routes>
       <Route path="/" element={<Home/>} />
@@ -26,9 +30,11 @@ function App() {
       <Route path="/contact" element={<Contact/>} />
       <Route path="/shop" element={<Shop/>} />
       <Route path="/product/:id" element={<ProductDetail />} />
+      <Route path="/auth" element={<Auth/>} />
+      <Route path="/register" element={<Register />} />
     </Routes>
     
-   
+   </MyProvider>
         
     </>
   );
