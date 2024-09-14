@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
-import Swal from 'sweetalert2'; // Import SweetAlert2
+import Swal from 'sweetalert2';
 import { GrFormPrevious } from 'react-icons/gr';
 import { MdOutlineNavigateNext } from 'react-icons/md';
 import { Images, JsonData } from '../../constant';
@@ -31,8 +32,8 @@ function CarouselTwo({ addToCart }) {
 
     Swal.fire({
       title: `${product.name}`,
-      text: "is added to the cart!",
-      icon: "success",
+      text: 'is added to the cart!',
+      icon: 'success',
     });
   };
 
@@ -58,7 +59,10 @@ function CarouselTwo({ addToCart }) {
               </button>
             </div>
             <div className="font-sans text-gray-500 mt-4">
-              <p className="titleprdct hover:text-red-400 duration-300">{product.name}</p>
+            
+               <Link to={`/product/${product.id}`}>
+                <p className="titleprdct hover:text-red-400 duration-300">{product.name}</p>
+              </Link>
               <p className="text-gray-500">£{product.price.toFixed(2)}</p>
             </div>
           </div>
